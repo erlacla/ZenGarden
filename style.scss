@@ -1,0 +1,181 @@
+//styles for zen garden project
+@import "./partials/variables";
+@import "./partials/intro";
+@import "./partials/main";
+@import "./partials/footer";
+@import "./partials/sidebar";
+@import "./partials/extras";
+@import "./partials/reset";
+@import "./partials/animations";
+
+#css-zen-garden {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background-color: darkblue;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10fr 1fr;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 100vw;
+  grid-row:1;
+}
+
+.intro {
+  max-width: 100vw;
+  min-width: 100vw;
+  position: relative;
+  background-size: cover;
+}
+
+.main {
+  max-width: 100vw;
+  position: relative;
+}
+
+.sidebar {
+  position: relative;
+  margin-left: 5em;
+  margin-top: 1em;
+  z-index: 2;
+}
+
+.extra1, .extra2, .extra3{
+  bottom:0;
+  display:none;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+
+@media only screen and (min-width: 900px) {
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 3fr 4fr;
+    grid-template-rows: 2fr 3fr;
+  }
+
+  .intro {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    background-size: cover;
+  }
+
+  .main {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+  }
+  .sidebar {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    padding: 0px;
+    background-image: url("./img/cliff.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr;
+    grid-template-rows: 2fr 3fr;
+  }
+
+  p{
+    line-height: 1.25em;
+  }
+
+  .extra1, .extra3{
+    display:initial;
+    bottom:-120rem;
+  }
+
+// little cloud
+  .summary::before {
+    content: url("./img/cloud.svg");
+    position: absolute;
+    left: -160px;
+    top: 120px;
+    transform:  scale(1.3);
+    animation: 100s cloud linear infinite;
+    animation-timing-function: ease-in-out;
+    z-index:-1;
+  }
+  .summary::after {
+    content: url("./img/cloud.svg");
+    position: absolute;
+    left: 350px;
+    top: -30px;
+    transform:  scale(1.3);
+    animation: 150s cloud linear infinite;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes cloud {
+    0% {
+        transform: translateX(50%);
+    }
+   
+    50% {
+       transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(50%);
+   }
+}
+
+  .summary {
+    position: absolute;
+    margin-top: -120px;
+    right: 50px;
+    background: url("./img/cloud.svg"); 
+    background-repeat: no-repeat;
+    height: 220px;
+    background-size: 320px;
+    width: 300px;
+    animation: 110s cloud linear infinite;
+  }
+  .summary p:nth-child(1) {
+    padding: 15px 80px 0px 60px;
+    font-size:.95rem;
+  }
+
+  .preamble {
+    width: 55%;
+    position: absolute;
+    right: 50px;
+    top: 90px;
+    font-size: 1rem;
+  }
+
+  .preamble::after {
+    content: url("./img/starfish.svg");
+    position: relative;
+    right: 50px;
+    bottom: 250px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: 2fr 3fr;
+  }
+
+  .extra1, .extra2, .extra3{
+    display:initial;
+  }
+
+  .extra1, .extra3 {
+    bottom:-110rem;
+  }
+
+}
