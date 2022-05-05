@@ -1,0 +1,152 @@
+//headers
+.select,
+.archives,
+.resources {
+  font-family: $primary-font;
+  font-size: 1.5em;
+  color: $color1;
+  font-weight: bold;
+}
+
+.design-name {
+  text-transform: uppercase;
+}
+
+.sidebar a {
+  color: $color5;
+}
+
+.siderbar ul {
+  list-style-type: none;
+}
+
+.sidebar a:hover {
+  background-color: white;
+  color: black;
+}
+
+.sidebar ul li a:link {
+  text-decoration: underline;
+}
+
+
+.design-selection li:nth-child(2n+1) {
+  clear: left;
+  border-right: solid .2em $color1;
+}
+
+.design-selection li {
+  float: left;
+  width: 45%;
+  padding: 0.5em;
+  
+}
+
+ //the word by
+ .design-selection li,
+ .zen-resources li {
+      color: $color1;
+      font-style:italic;
+ }
+ 
+.design-archives{
+  clear: left;
+  border-right: solid .2em $color1;
+  float: left;
+  width: 45%;
+  padding: 0.5em;
+}
+.design-archives li, .zen-resources li{
+  padding: 0.5em;
+}
+
+.zen-resources {
+  float: left;
+  width: 40%;
+  padding: .3em;
+}
+
+design-selection .design-name,
+.zen-resources a,
+li.viewall a, .next {
+  display: block;
+  margin-bottom: 0.25em;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 900px) {
+  .sidebar{
+    display: grid;
+    
+  }
+  .sidebar a {
+    line-height: 2;
+  }
+  .select,
+.archives,
+.resources{
+  color: black;
+}
+.select{
+  padding-top: 30px;
+  padding-left: 20px;
+}
+  .design-name {
+    text-transform: uppercase;
+  }
+
+  .design-selection {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    margin-left: 25px;
+    margin-top: 15px;
+  }
+
+  .design-archives {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    border: none;
+    width: auto;
+    margin-left: 25px;
+  }
+
+  .zen-resources {
+    width: auto;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    margin-left: 25px;
+  }
+
+  .sidebar ul {
+    font-family: $secondary-font;
+    // margin: 5px;
+    // margin-left: 15px;
+    display: block;
+  }
+
+  .sidebar li {
+    margin-left: 2.5em;
+  }
+
+  .design-selection li:nth-child(2n+1) {
+    border: none;
+  }
+
+  .design-selection li,
+  .design-archives li,
+  .zen-resources li {
+    clear: left;
+    width: auto;
+  }
+
+  .resources,
+  .archives {
+    clear: left;
+    width: auto;
+    
+  }
+
+  .design-selection li {
+    width: auto;
+  }
+}
